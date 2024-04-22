@@ -1,0 +1,12 @@
+contexts:
+- name: 13.60.8.174:8080
+  server: 13.60.8.174:8080
+  user: 13.60.8.174:8080
+current-context: 13.60.8.174:8080
+servers:
+- grpc-web-root-path: ""
+  insecure: true
+  server: 13.60.8.174:8080
+users:
+- auth-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhcmdvY2QiLCJzdWIiOiJhZG1pbjpsb2dpbiIsImV4cCI6MTcxMzg2NzMwMywibmJmIjoxNzEzNzgwOTAzLCJpYXQiOjE3MTM3ODA5MDMsImp0aSI6ImRlYzU4NjViLWUwNzQtNDJhMi1iZTRiLTM3YTdjMDFhNjZmMyJ9.4dWUD6i7Cjc9P1gkVWMkoLRt69p1jqSWA1lbi_2HgzA
+  name: 13.60.8.174:8080

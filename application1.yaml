@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha3
+kind: Application
+metadata:
+  name: my-application
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:vbhaskar09ps/argocd_demo.git
+    targetRevision: HEAD
+    path: /home/ubuntu/argocd_demo
+    helm:
+      - values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncpolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    manifest:
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: demo
+      spec:
+        containers:
+          - name: check-deployment
+            image: alpine
+            command: ["sh", "-c", "check-deployment.sh"]
+            restartPolicy: OnFailure
+    ignoreErrors: true
+
